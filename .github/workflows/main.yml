@@ -35,5 +35,6 @@ jobs:
              
            - run: npm install
            - run: npm run test
+           - run: chmod +x mvnw && npm run ci:backend:test
 
 
