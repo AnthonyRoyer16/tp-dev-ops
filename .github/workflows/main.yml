@@ -29,8 +29,11 @@ jobs:
            - uses: actions/setup-java@v1
              with:
                  java-version: '11.x'
-           - name: Update node.js
+
+           - name: Install node.js packages 
              run: npm update
-           - name: Install node.js packages
-             run: npm install
+             
+           - run: npm install
+           - run: npm run test
+
 
