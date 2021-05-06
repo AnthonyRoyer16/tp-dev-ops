@@ -41,6 +41,8 @@ jobs:
            - run: $ npm run ci:e2e:run
            - run: $ npm run ci:e2e:teardown
            - run: $ npm run e2e
+           - run: $ ./mvnw 
+           - run: $ npm run e2e
 
 
 
