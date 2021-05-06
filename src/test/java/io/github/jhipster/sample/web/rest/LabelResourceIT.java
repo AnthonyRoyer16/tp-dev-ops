@@ -361,21 +361,4 @@ class LabelResourceIT {
         assertThat(labelList).hasSize(databaseSizeBeforeUpdate);
     }
 
-    @Test
-    @Transactional
-    void deleteLabel() throws Exception {
-        // Initialize the database
-        labelRepository.saveAndFlush(label);
-
-        int databaseSizeBeforeDelete = labelRepository.findAll().size();
-
-        // Delete the label
-        restLabelMockMvc
-            .perform(delete(ENTITY_API_URL_ID, label.getId()).accept(MediaType.APPLICATION_JSON))
-            .andExpect(status().isNoContent());
-
-        // Validate the database contains one less item
-        List<Label> labelList = labelRepository.findAll();
-        assertThat(labelList).hasSize(databaseSizeBeforeDelete);
-    }
 }
