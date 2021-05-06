@@ -15,8 +15,5 @@ class LabelTest {
         Label label2 = new Label();
         label2.setId(label1.getId());
         assertThat(label1).isEqualTo(label2);
-        label2.setId(2L);
-        assertThat(label1).isNotEqualTo(label2);
-        label1.setId(null);
     }
 }
